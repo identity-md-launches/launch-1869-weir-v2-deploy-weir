@@ -1,0 +1,161 @@
+/* Weir. · the cutaway town. Boxes are the measured comp (1536×1024) as % of the frame; type sizes in cqw so the frame scales. */
+
+:root {
+  --px-ink: #0a0b11;
+  --px-sky: #56c7f8;
+  --px-paper: #f8f8f8;
+  --px-yellow: #f7c751;
+  --px-brick: #b8402a;
+  --px-grass: #4f8f3a;
+  --px-soil: #4c2c24;
+  --px-sign: #f8f7ee;
+  --px-wood: #f6cb87;
+  --font-pixel: "Press Start 2P", "Pixelify Sans", monospace;
+  --font-numeric: "Atkinson Hyperlegible", "Alef", system-ui, sans-serif;
+  --font-body: "Alef", "Avenir Next", system-ui, sans-serif;
+}
+
+.town { font-weight: 400; font-variant-ligatures: none; font-feature-settings: "liga" 0; position: relative; width: 100%; aspect-ratio: 1536 / 1024; overflow: hidden; background: var(--px-paper); container-type: inline-size; font-family: var(--font-pixel); color: var(--px-ink); line-height: 1; }
+.town * { box-sizing: border-box; }
+.town h1, .town p { font-family: inherit; font-size: inherit; font-weight: 400; letter-spacing: 0; max-width: none; margin: 0; text-wrap: initial; }
+.town h1.r-headline { font-family: var(--font-pixel); font-size: 2.6cqw; font-weight: 400; letter-spacing: 0; line-height: 1; }
+.town nav.r-nav { border: 0; gap: 0; }
+.town .r-nav a, .town nav.r-nav a { font-size: 0.82cqw; padding: 0.3cqw 0.2cqw; border: 0; font-weight: 400; }
+.town a:hover { color: inherit; }
+.town .r-brand { white-space: nowrap; }
+.town .brand-dot { color: var(--px-brick); }
+.town .r-bus img.plate, .town .r-van img.plate, .town .r-truck img.plate { position: absolute; width: 96%; max-width: none; height: 146%; left: 2%; top: -36%; object-fit: contain; }
+.town .r { position: absolute; margin: 0; }
+.town img.plate { display: block; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; image-rendering: crisp-edges; pointer-events: none; }
+
+/* measured boxes */
+.town .r-topbar { left: 0; top: 0; width: 100%; height: 7.42%; background: var(--px-paper); border-top: 0.13cqw solid var(--px-ink); z-index: 4; }
+.town .r-mark { left: 1.95%; top: 1.3%; width: 5.2%; height: 4.6%; z-index: 5; }
+.town .r-brand { left: 9.77%; top: 1.46%; width: 15.95%; height: 4.88%; z-index: 5; font-size: 2.9cqw; display: flex; align-items: center; }
+.town .r-nav { left: 31.5%; top: 2.44%; width: 39%; height: 3.13%; z-index: 5; display: flex; justify-content: space-between; align-items: center; font-size: 1.43cqw; }
+.town .r-nav a { color: var(--px-ink); text-decoration: none; padding: 0.3cqw 0.2cqw; }
+.town .r-nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 0.2cqw; text-underline-offset: 0.3cqw; }
+.town .r-connect { left: 84.44%; top: 1.17%; width: 13.8%; height: 5.08%; z-index: 5; display: flex; }
+.town .r-headline { left: 23.44%; top: 9.28%; width: 53.06%; height: 7.81%; z-index: 3; font-size: 2.6cqw; font-weight: 400; text-align: center; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+.town .r-backdrop { left: 0; top: 7.42%; width: 100%; height: 45.9%; z-index: 1; }
+.town .r-backdrop img { object-position: 50% 39.6%; }
+.town .pavement-front { z-index: 3; clip-path: inset(93.2% 0 1.2% 0); pointer-events: none; }
+.town .r-client-house { left: 1.95%; top: 15.63%; width: 22.79%; height: 37.6%; z-index: 2; }
+.town .r-reviewers-hall { left: 32.23%; top: 19.04%; width: 26.69%; height: 22.95%; z-index: 2; }
+.town .r-door-building { left: 56.64%; top: 33.2%; width: 16.6%; height: 21%; z-index: 2; }
+.town .r-door { left: 62.17%; top: 40.53%; width: 6.18%; height: 11.72%; z-index: 6; display: block; border-radius: 0; outline-offset: 0.3cqw; }
+.town .r-door:focus-visible { outline: 0.3cqw solid var(--px-ink); }
+.town .r-freelancer-studio { left: 76.5%; top: 20.02%; width: 19.53%; height: 32.71%; z-index: 2; }
+.town .r-pipe-band { left: 0; top: 52.7%; width: 100%; height: 12.73%; z-index: 2; }
+.town .r-pipe-band { overflow: hidden; }
+.town .r-pipe-band img.soil { object-position: 50% 0%; }
+.town .r-pipe-band img.pipe { position: absolute; left: 10.2%; top: 50%; width: 79.3%; height: auto; transform: translateY(-50%); object-fit: unset; }
+.town .coins { left: 0; top: 53.22%; width: 100%; height: 12.21%; z-index: 2; pointer-events: none; }
+.town .coin { position: absolute; top: 50%; width: 1.7cqw; height: 1.7cqw; transform: translateY(-50%); }
+.town .coin svg { width: 100%; height: 100%; display: block; shape-rendering: crispEdges; }
+.town .arrow { position: absolute; top: 50%; width: 1.3cqw; height: 1.1cqw; transform: translateY(-50%); }
+.town .arrow svg { width: 100%; height: 100%; display: block; shape-rendering: crispEdges; }
+
+/* signs: white plates with a pixel border, text centred */
+.town .sign { z-index: 3; background: var(--px-sign); border: 0.2cqw solid var(--px-ink); display: flex; align-items: center; justify-content: center; white-space: nowrap; text-transform: uppercase; }
+.town .r-client-sign { left: 7.81%; top: 21.68%; width: 11.72%; height: 3.71%; font-size: 1.6cqw; }
+.town .r-reviewers-sign { left: 39.39%; top: 20.31%; width: 11.72%; height: 3.13%; font-size: 1.3cqw; }
+.town .r-agree-sign { left: 39.39%; top: 34.38%; width: 12.7%; height: 2.93%; font-size: 0.95cqw; text-transform: none; }
+.town .r-start-sign { left: 59.24%; top: 37.3%; width: 12.04%; height: 3.13%; font-size: 1.05cqw; text-transform: none; background: var(--px-wood); }
+.town .r-freelancer-sign { left: 78.45%; top: 25.2%; width: 15.3%; height: 4.1%; font-size: 1.6cqw; }
+.town .r-disputes-stamp { left: 32.23%; top: 38.75%; width: 26.69%; height: 3.3%; z-index: 3; display: flex; align-items: center; justify-content: center; font-family: var(--font-pixel); font-size: 1.35cqw; letter-spacing: 0.1em; text-transform: uppercase; color: #38414a; text-shadow: 0.13cqw 0.13cqw 0 #d2d7da; pointer-events: none; }
+.town .label { z-index: 3; background: var(--px-sign); border: 0.13cqw solid var(--px-ink); padding: 0.2cqw 0.4cqw; white-space: nowrap; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.05; }
+/* "deposit": a white plate with a slight black border, text centred. */
+.town p.label.r-deposit-label { left: 14.6%; top: 46.1%; width: 5.8%; height: 3.4%; min-width: 0; padding: 0; background: #fff; border: 0.1cqw solid #0a0b11; color: #0a0b11; font-size: 1.35cqw; display: flex; align-items: center; justify-content: center; text-align: center; }
+/* The studio plate paints the sign plate into the desk front; the label sits exactly on it. */
+.town p.label.r-streamed-label { left: 86.6%; top: 45.5%; width: 7.8%; height: 4.7%; min-width: 0; padding: 0; font-size: 1.4cqw; }
+.town .r-stream-label { left: 29.95%; top: 53.91%; width: 12.7%; height: 2.44%; font-size: 1.0cqw; }
+.town .r-pause-label { left: 54.04%; top: 54.49%; width: 4.23%; height: 2.44%; font-size: 0.68cqw; }
+.town .ptr { z-index: 3; background: transparent; border: 0; font-size: 0.95cqw; color: var(--px-ink); display: flex; align-items: flex-start; }
+.town .r-client-ptr { left: 14%; top: 14.45%; width: 5.53%; height: 2.44%; font-size: 1.05cqw; text-transform: uppercase; }
+.town .r-reviewers-ptr { left: 58.27%; top: 18.07%; width: 6.51%; height: 2.15%; font-size: 0.68cqw; }
+.town .r-studio-ptr { left: 78.78%; top: 16.8%; width: 4.56%; height: 2.34%; font-size: 0.95cqw; }
+.town .r-door-ptr { left: 69.66%; top: 44.14%; width: 6.51%; height: 2.34%; font-size: 0.68cqw; background: var(--px-sign); border: 0.13cqw solid var(--px-ink); padding: 0.1cqw 0.3cqw; align-items: center; justify-content: center; }
+.town .r-body { left: 28.65%; top: 65.92%; width: 42.97%; height: 6.05%; z-index: 3; font-family: var(--font-body); font-size: 1.3cqw; font-weight: 400; letter-spacing: -0.01em; line-height: 1.45; white-space: nowrap; text-align: center; display: flex; align-items: center; justify-content: center; }
+.town .step { z-index: 3; font-size: 1.6cqw; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+.town .step::after { content: ""; position: absolute; left: 50%; top: 100%; width: 0.2cqw; height: 2.2cqw; background: var(--px-ink); transform: rotate(18deg); transform-origin: top; }
+.town .r-step1-label { left: 14.32%; top: 66.6%; width: 13.67%; height: 3.91%; }
+.town .r-step2-label { left: 44.92%; top: 66.6%; width: 12.5%; height: 3.91%; }
+.town .r-step3-label { left: 74.22%; top: 66.6%; width: 14%; height: 3.91%; }
+.town .r-bus { left: 5.86%; top: 71.1%; width: 29.62%; height: 19.53%; z-index: 2; }
+.town .r-van { left: 35.81%; top: 71.1%; width: 27.67%; height: 19.53%; z-index: 2; }
+.town .r-truck { left: 64.45%; top: 71.1%; width: 32.23%; height: 19.53%; z-index: 2; }
+
+/* pixel button */
+.town .px-button { font-family: var(--font-pixel); font-size: 0.85cqw; line-height: 1; color: var(--px-ink); background: var(--px-yellow); border: 0.26cqw solid var(--px-ink); box-shadow: inset -0.13cqw -0.13cqw 0 #c98f00, inset 0.13cqw 0.13cqw 0 #ffe08a; border-radius: 0; padding: 0 1.2cqw; min-height: 0; height: 100%; width: 100%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.6cqw; text-decoration: none; }
+.town .px-button:hover { background: #ffd978; }
+.town .px-button:active { transform: translate(0.13cqw, 0.13cqw); }
+.town .r-connect .wallet-control, .town .r-connect .wallet-control > * { width: 100%; height: 100%; }
+.town .r-connect .wallet-button { font-family: var(--font-pixel); font-size: 0.85cqw; line-height: 1; color: var(--px-ink); background: var(--px-yellow); border: 0.26cqw solid var(--px-ink); box-shadow: inset -0.13cqw -0.13cqw 0 #c98f00, inset 0.13cqw 0.13cqw 0 #ffe08a; border-radius: 0; padding: 0 1.2cqw; min-height: 0; height: 100%; width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 0.6cqw; }
+.town .r-connect .wallet-button:hover { background: #ffd978; }
+.town .r-connect .wallet-button { white-space: nowrap; font-weight: 400; }
+.town .r-connect .wallet-button > svg, .town .r-connect .wallet-button > span[aria-hidden] { display: none; }
+.town .r-mark { color: var(--px-ink); display: flex; align-items: center; }
+main.page.home { width: 100%; max-width: none; padding: 0; margin: 0; }
+.page-inner { max-width: 1120px; margin: 0 auto; padding: 32px; }
+@media (max-width: 640px) { .page-inner { padding: 16px; } }
+.town p.label, .town p.sign { width: max-content; min-width: 0; padding-inline: 0.5cqw; }
+
+/* Phones: the town becomes a strip you pan along the street (busytown grammar); copy sits above and below as text. */
+.town-wrap { position: relative; }
+@media (min-width: 901px) { .town-wrap { aspect-ratio: 1536 / 940; overflow: hidden; } }
+.town-mobile-copy { display: none; }
+@media (max-width: 900px) {
+  .town-wrap { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; }
+  .town-wrap .town { width: 1100px; }
+  .town-wrap .town .r-topbar, .town-wrap .town .r-mark, .town-wrap .town .r-brand, .town-wrap .town .r-nav, .town-wrap .town .r-connect, .town-wrap .town .r-headline, .town-wrap .town .r-body { display: none; }
+  .town-wrap .town .r-backdrop, .town-wrap .town .pavement-front { top: 0; height: 53.3%; }
+  .town-mobile-copy { display: block; padding: 16px 16px 8px; }
+  .town-mobile-copy h1 { font-family: var(--font-pixel); font-size: 2rem; line-height: 1.1; margin: 0 0 8px; }
+  .town-mobile-copy p { margin: 0; color: var(--color-muted); }
+  .town-mobile-hint { display: block; padding: 4px 16px 12px; font-size: 0.875rem; color: var(--color-muted); }
+  .mobile-topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border-bottom: 2px solid var(--px-ink); background: var(--px-paper); }
+  .mobile-topbar .brand { font-family: var(--font-pixel); font-weight: 700; font-size: 1.5rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--px-ink); }
+  .mobile-topbar .brand svg { width: 32px; height: 22px; }
+  .mobile-topbar .wallet-button { font-family: var(--font-pixel); font-weight: 400; font-size: 0.6rem; white-space: nowrap; background: var(--px-yellow); border: 2px solid var(--px-ink); border-radius: 0; min-height: 40px; padding: 6px 12px; }
+  .mobile-nav { display: flex; gap: 14px; padding: 8px 16px; border-bottom: 1px solid var(--color-border); overflow-x: auto; }
+  .mobile-nav a { font-family: var(--font-pixel); font-weight: 400; font-size: 0.55rem; white-space: nowrap; text-decoration: none; color: var(--px-ink); padding: 6px 0; border-bottom: 2px solid transparent; }
+  .mobile-nav a[aria-current="page"] { border-color: var(--px-brick); }
+}
+@media (min-width: 901px) { .mobile-topbar, .mobile-nav, .town-mobile-hint { display: none; } }
+
+/* Signature motion: the coins advance along the pipe in pixel steps; nothing else on the page moves. */
+@media (prefers-reduced-motion: no-preference) {
+  .town .coins { animation: coins-advance 4s steps(8, end) infinite; }
+  @keyframes coins-advance { from { transform: translateX(0); } to { transform: translateX(5.2%); } }
+  .town .coins .coin:nth-child(n) { will-change: transform; }
+}
+
+/* Pointer lines from the two floating labels to what they name (one-pixel pointers, as the comp draws them). */
+.town .r-client-ptr::after { content: ""; position: absolute; left: -1.2cqw; top: 100%; width: 0.13cqw; height: 2.2cqw; background: var(--px-ink); transform: rotate(35deg); transform-origin: top; }
+.town .r-reviewers-ptr::after { content: ""; position: absolute; left: -0.6cqw; top: 90%; width: 0.13cqw; height: 2.6cqw; background: var(--px-ink); transform: rotate(32deg); transform-origin: top; }
+/* Phones: the strip shows the scene only; stops live in the section below. */
+@media (max-width: 900px) {
+  .town-wrap { height: 513px; }
+  .town-wrap .town .step, .town-wrap .town .r-bus, .town-wrap .town .r-van, .town-wrap .town .r-truck { display: none; }
+  .town-dots { display: flex; gap: 8px; justify-content: center; padding: 10px 16px 0; }
+  .town-dots span { width: 10px; height: 10px; background: var(--color-border); border: 1px solid var(--px-ink); }
+  .town-dots span.on { background: var(--px-ink); }
+  .town-mobile-cta { display: block; margin: 12px 16px 4px; }
+  .town-mobile-cta .button { width: 100%; justify-content: space-between; }
+}
+@media (min-width: 901px) { .town-dots, .town-mobile-cta { display: none; } }
+
+/* Legibility: the pixel face is for display sizes only. Controls, nav and small labels use the clear bold face. */
+.town .r-nav a, .town nav.r-nav a { font-family: var(--font-numeric); font-weight: 700; font-size: 1.1cqw; }
+.town .r-connect .wallet-button, .town .px-button { font-family: var(--font-numeric); font-weight: 700; font-size: 1.05cqw; }
+.town .label { font-family: var(--font-numeric); font-weight: 700; }
+/* Figure signs: Jersey 25 keeps the pixel world with a plain zero and a clear 5; Atkinson's slashed zero read as a typo here. */
+.town .r-deposit-label, .town .r-streamed-label { font-family: "Jersey 25", var(--font-numeric); font-weight: 400; font-size: 1.5cqw; line-height: 0.95; letter-spacing: 0.02em; }
+.town .r-stream-label { font-size: 1.15cqw; }
+.town .r-pause-label { font-size: 0.95cqw; }
+.town .r-agree-sign { font-family: var(--font-numeric); font-weight: 700; font-size: 1.15cqw; }
+.town .r-start-sign { font-size: 1.1cqw; }
+.town .ptr { display: none; }
+.mobile-nav a, .mobile-topbar .wallet-button { font-family: var(--font-numeric); font-weight: 700; font-size: 0.9rem; }
+.town-mobile-cta .button { font-family: var(--font-numeric); font-weight: 700; font-size: 1rem; }

@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "launchId": "c107cc18-6ba3-4a66-a190-0f496e7c2d72",
+  "chainId": 4663,
+  "sourceCommit": "108660578606392f284fe2ad19bd8b576ece0bae",
+  "attestationHash": "87f6b46bf48f07b1406efa6bcd83c8c18794c031c5797841a282bbdf60543582",
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "address": "0x58b82fa656ecf47a0dca5be6bad06b92e22f7dbe",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "abiPath": "abi/LaunchToken.json"
+    },
+    {
+      "name": "Weir",
+      "address": "0xde049547f1e55bb093e14d8f4545d1cc9b613f97",
+      "abiHash": "6c7d3d5ff69d4b49a6b5f61081c59eabcab0f1465dd424d33a0466b544c22a70",
+      "abiPath": "abi/Weir.json"
+    }
+  ],
+  "poolKey": {
+    "fee": 12500,
+    "hooks": "0x19bec7c2e1b2aadaf67b259744751a9960d66000",
+    "currency0": "0x58b82fa656ecf47a0dca5be6bad06b92e22f7dbe",
+    "currency1": "0x5f7bb59365ce557c26dbcaa4ee9d39a4b95b7127",
+    "tickSpacing": 60
+  },
+  "network": {
+    "chainId": 4663,
+    "name": "Robinhood Chain",
+    "testnet": false,
+    "rpcUrls": [
+      "https://robinhood-rpc.publicnode.com",
+      "https://rpc.mainnet.chain.robinhood.com"
+    ],
+    "explorer": "https://robin.etherscan.io",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "faucets": [],
+    "uniswapV4": {
+      "poolManager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "universalRouter": "0x8876789976decbfcbbbe364623c63652db8c0904",
+      "quoter": "0x8dc178efb8111bb0973dd9d722ebeff267c98f94",
+      "stateView": "0xf3334192d15450cdd385c8b70e03f9a6bd9e673b",
+      "positionManager": "0x58daec3116aae6d93017baaea7749052e8a04fa7",
+      "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+      "extendedSwapParams": true
+    },
+    "pairToken": {
+      "address": "0x5f7bb59365ce557c26dbcaa4ee9d39a4b95b7127",
+      "symbol": "IMD",
+      "name": "Identity.md",
+      "decimals": 18
+    }
+  },
+  "walletAddChain": {
+    "chainId": "0x1237",
+    "chainName": "Robinhood Chain",
+    "rpcUrls": [
+      "https://robinhood-rpc.publicnode.com",
+      "https://rpc.mainnet.chain.robinhood.com"
+    ],
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "blockExplorerUrls": [
+      "https://robin.etherscan.io"
+    ]
+  },
+  "assets": []
+}

@@ -4,7 +4,33 @@ Weir streams ERC-20 tokens from a client to a recipient under a terms hash and U
 
 **Reviewed by the IMD swarm's audit panel, not independently audited.** The oracle supplies a panel judgement, not a court of law. The 0.5 IMD oracle fee is spent even if the panel disagrees or the request is refused. This is v2: it applies the fixes from the swarm's audit of v1 (see "Changes since v1" at the end). Use it at your own risk.
 
-This contribution implements `src/Weir.sol`, the required `src/LaunchToken.sol`, supporting libraries and interface, tests, and compiler-exported ABIs under `docs/abi/`. The manifest, independent review, publication, admission, deployment, and website are separate workflow contributions or service responsibilities. This tree contains no launch manifest or deployment transaction.
+This contribution implements `src/Weir.sol`, the required `src/LaunchToken.sol`, supporting libraries and interface, tests, and compiler-exported ABIs under `docs/abi/`. The manifest, independent review, publication, admission, and deployment are separate workflow contributions or service responsibilities. This tree contains no launch manifest or deployment transaction.
+
+## Website
+
+`web/` and `dist/` are the Weir. front end imported unchanged from [SwarmStream/weir](https://github.com/SwarmStream/weir) at commit `bf5fa02392c5c0fd1f7bb4b29ade63396025414b`: a Vite + React + wagmi single-page dapp (source, `package-lock.json`, tests) and its finished static export. `dist/` is what the platform publishes to the site label `weir`; it is committed exactly as built upstream and is not rebuilt here. Routes use `#/…` and the export uses relative asset URLs (`base: './'`), so it serves from a gateway subpath or an ENS name without server rewrites. All fonts, images and scripts are served from the site itself.
+
+The site reads `dist/imd-deployment.json` at startup and verifies each ABI's canonical Keccak-256 against the `abiHash` recorded there before enabling any transaction. That file names, on Robinhood Chain 4663, the WEIR token `0x58b82fa656ecf47a0dca5be6bad06b92e22f7dbe` from the earlier launch 1780 and the Weir v2 contract `0xde049547f1e55bb093e14d8f4545d1cc9b613f97` from this project's launch 1869 (source commit `108660578606392f284fe2ad19bd8b576ece0bae`). The Weir `abiHash` equals the one in the launch's verified deployment record.
+
+### Install, preview and rebuild
+
+Node 22.12 or newer and npm, from `web/`:
+
+```sh
+npm ci                 # installs the pinned dependencies (keep node_modules out of Git)
+npm run typecheck      # tsc --noEmit
+npm test               # unit tests for the domain helpers
+npm run dev            # Vite dev server against the prepared public assets
+npm run build          # verifies the pinned ABIs, builds ../dist, writes the final manifest
+npm run check:export   # re-verifies the manifest, ABI hashes and every asset hash in ../dist
+npm run preview        # serves the built export
+```
+
+`npm run build` needs the deployed source commit reachable in Git (it is this repository's head) or `docs/abi/*.json` in the working tree, and it overwrites `dist/`. For this job the build was run on a copy under `test/scratch/` and produced a byte-identical export, so the committed `dist/` was left untouched. Install dependencies and point npm's cache at a temporary directory if the worker restricts the home directory (`npm ci --cache /tmp/weir-npm-cache`).
+
+### Validation
+
+Results, commands and limitations are in [docs/FRONTEND_VALIDATION.md](docs/FRONTEND_VALIDATION.md), with evidence under `docs/validation/`. In short: typecheck passed; the scratch build reproduced the committed `dist/` byte for byte; the export check and both public RPCs confirmed the configured contracts; a twelve-scenario mock-wallet interaction run of the production export passed; the pages render at 360, 390, 768 and 1440 px with no horizontal scroll, no console errors and no external host besides the chain RPC; the pinned design probe passed 12 of 16 checks, the four misses being deliberate choices of the approved pixel design. One upstream unit test and the upstream browser suite are stale against the redesign and are documented rather than altered. The implemented design is documented in [DESIGN.md](DESIGN.md); third-party notices for the front end are in [docs/FRONTEND_THIRD_PARTY.md](docs/FRONTEND_THIRD_PARTY.md). `web/README.md` is the upstream's own text and mentions an earlier commit; the notes above and the validation record are authoritative for this repository.
 
 ## Build and checks
 

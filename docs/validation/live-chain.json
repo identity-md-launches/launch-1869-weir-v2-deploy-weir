@@ -1,0 +1,65 @@
+{
+  "observedAt": "2026-10-15T17:37:59.340Z",
+  "sourceCommit": "108660578606392f284fe2ad19bd8b576ece0bae",
+  "readOnly": true,
+  "records": [
+    {
+      "rpc": "https://robinhood-rpc.publicnode.com",
+      "chainId": 4663,
+      "blockNumber": "89408852",
+      "contracts": [
+        {
+          "name": "LaunchToken",
+          "address": "0x58b82fa656ecf47a0dca5be6bad06b92e22f7dbe",
+          "byteLength": 1723,
+          "runtimeCodeKeccak": "0x4b31f2c8acd7927be8cd8343fab9dd61cad18478e5e65d8113e54186ea32a88e"
+        },
+        {
+          "name": "Weir",
+          "address": "0xde049547f1e55bb093e14d8f4545d1cc9b613f97",
+          "byteLength": 24533,
+          "runtimeCodeKeccak": "0x23be779f8ec5fb6bf33f7f1a8cd6c54162bb5369fe65f44c21ed761fd08f89c4"
+        }
+      ],
+      "reads": {
+        "weir": "0x58b82fa656ECF47a0dca5bE6BAd06B92E22f7dbE",
+        "imd": "0x5F7Bb59365ce557C26dbcAa4EE9d39A4b95B7127",
+        "intake": "0xa43e6F75ee006411F79Ac1C84120606C2330DE82",
+        "minHold": "10000000000000000000000",
+        "disputeTimeout": "604800",
+        "courtFund": "0",
+        "oraclePrice": "500000000000000000",
+        "streamCount": "0"
+      }
+    },
+    {
+      "rpc": "https://rpc.mainnet.chain.robinhood.com",
+      "chainId": 4663,
+      "blockNumber": "89408854",
+      "contracts": [
+        {
+          "name": "LaunchToken",
+          "address": "0x58b82fa656ecf47a0dca5be6bad06b92e22f7dbe",
+          "byteLength": 1723,
+          "runtimeCodeKeccak": "0x4b31f2c8acd7927be8cd8343fab9dd61cad18478e5e65d8113e54186ea32a88e"
+        },
+        {
+          "name": "Weir",
+          "address": "0xde049547f1e55bb093e14d8f4545d1cc9b613f97",
+          "byteLength": 24533,
+          "runtimeCodeKeccak": "0x23be779f8ec5fb6bf33f7f1a8cd6c54162bb5369fe65f44c21ed761fd08f89c4"
+        }
+      ],
+      "reads": {
+        "weir": "0x58b82fa656ECF47a0dca5bE6BAd06B92E22f7dbE",
+        "imd": "0x5F7Bb59365ce557C26dbcAa4EE9d39A4b95B7127",
+        "intake": "0xa43e6F75ee006411F79Ac1C84120606C2330DE82",
+        "minHold": "10000000000000000000000",
+        "disputeTimeout": "604800",
+        "courtFund": "0",
+        "oraclePrice": "500000000000000000",
+        "streamCount": "0"
+      }
+    }
+  ]
+}

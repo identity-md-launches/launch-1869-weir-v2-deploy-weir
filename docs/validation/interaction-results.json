@@ -1,0 +1,53 @@
+{
+  "base": "http://127.0.0.1:40581/preview/",
+  "results": [
+    {
+      "name": "Home at 320/360/390/1440: product and Start a stream on the first screen, no horizontal scroll, metadata",
+      "passed": true
+    },
+    {
+      "name": "Wallet: EIP-6963 sheet, connect, short address, disconnect; Escape restores focus",
+      "passed": true
+    },
+    {
+      "name": "Phone picker: Open in MetaMask, Coinbase Wallet, Rabby, Phantom and Coinbase Smart Wallet",
+      "passed": true
+    },
+    {
+      "name": "Rejected network switch stays visible and blocks writes; retry connects",
+      "passed": true
+    },
+    {
+      "name": "Create: 6-decimal token, terms hash, approve, create, receipt navigation",
+      "passed": true
+    },
+    {
+      "name": "Create: invalid recipient is announced and focused",
+      "passed": true
+    },
+    {
+      "name": "Client: pause, restart, deposit with approval, refund max, stop",
+      "passed": true
+    },
+    {
+      "name": "Recipient: accept terms, withdraw max",
+      "passed": true
+    },
+    {
+      "name": "Dispute: note, exact question preview, bounded bond, send",
+      "passed": true
+    },
+    {
+      "name": "Timed-out dispute can be closed by anyone; ruled dispute can be applied",
+      "passed": true
+    },
+    {
+      "name": "Streams list: role tabs and open by number; Records lookup",
+      "passed": true
+    },
+    {
+      "name": "Missing deployed code disables writes even when connected",
+      "passed": true
+    }
+  ]
+}
